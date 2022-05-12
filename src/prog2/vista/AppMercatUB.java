@@ -27,41 +27,71 @@ public class AppMercatUB extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
-        jMenu3 = new javax.swing.JMenu();
-        jMenu4 = new javax.swing.JMenu();
+        btnArticles = new javax.swing.JButton();
+        btnClients = new javax.swing.JButton();
+        btnComandes = new javax.swing.JButton();
+        btnDadesGuardar = new javax.swing.JButton();
+        btnDadesCarregar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jMenu1.setText("File");
-        jMenuBar1.add(jMenu1);
+        btnArticles.setText("Gestionar Articles");
+        btnArticles.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnArticlesActionPerformed(evt);
+            }
+        });
 
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
+        btnClients.setText("Gestionar Clients");
 
-        jMenu3.setText("jMenu3");
-        jMenuBar1.add(jMenu3);
+        btnComandes.setText("Gestionar Comandes");
 
-        jMenu4.setText("jMenu4");
-        jMenuBar1.add(jMenu4);
+        btnDadesGuardar.setText("Guardar Dades");
 
-        setJMenuBar(jMenuBar1);
+        btnDadesCarregar.setText("Carregar Dades");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 624, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(264, 264, 264)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(btnArticles, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnClients, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnComandes)
+                    .addComponent(btnDadesGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnDadesCarregar, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(266, 266, 266))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 326, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(69, 69, 69)
+                .addComponent(btnArticles, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(btnClients)
+                .addGap(18, 18, 18)
+                .addComponent(btnComandes)
+                .addGap(18, 18, 18)
+                .addComponent(btnDadesGuardar)
+                .addGap(18, 18, 18)
+                .addComponent(btnDadesCarregar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(65, 65, 65))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnArticlesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnArticlesActionPerformed
+        // TODO add your handling code here:
+        GestioArticles finestraArticles = new GestioArticles();
+        
+        finestraArticles.setTitle("Gestió Articles");
+        finestraArticles.pack();
+        finestraArticles.setLocationRelativeTo(null);
+        finestraArticles.setVisible(true);
+    }//GEN-LAST:event_btnArticlesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -93,16 +123,19 @@ public class AppMercatUB extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AppMercatUB().setVisible(true);
+                AppMercatUB appMercat = new AppMercatUB();
+                appMercat.setTitle("Menu Principal");
+                appMercat.setLocationRelativeTo(null);
+                appMercat.setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JButton btnArticles;
+    private javax.swing.JButton btnClients;
+    private javax.swing.JButton btnComandes;
+    private javax.swing.JButton btnDadesCarregar;
+    private javax.swing.JButton btnDadesGuardar;
     // End of variables declaration//GEN-END:variables
 }
