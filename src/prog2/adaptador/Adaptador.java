@@ -5,7 +5,6 @@ import prog2.model.Client;
 import prog2.model.Comanda;
 import prog2.model.Dades;
 import prog2.vista.MercatException;
-import prog2.vista.MercatUB;
 
 import java.io.*;
 
@@ -91,13 +90,13 @@ public class Adaptador {
         
     }
     
-    public void carregaDades(String fitxerOrigen) throws MercatException{
+    public void carregaDades(File file) throws MercatException{
 
         FileInputStream fin = null;
         ObjectInputStream ois = null;
 
         try {
-            fin = new FileInputStream(fitxerOrigen);
+            fin = new FileInputStream(file);
 
             ois = new ObjectInputStream(fin);
             dades = (Dades)ois.readObject();
@@ -107,11 +106,15 @@ public class Adaptador {
             throw new MercatException("No es pot castejar a un objecte tipus dades");
         } catch (IOException e) {
             throw new MercatException("Hi ha hagut un problema de lectura");
-        } finally {
+        } catch (NullPointerException e) {
+            throw new MercatException(e.getMessage());
+        }finally {
             try {
                 fin.close();
             } catch (IOException e) {
                 throw new MercatException("Hi ha hagut un problema al tancar el fitxer");
+            } catch (NullPointerException e) {
+                throw new MercatException("Null pointer exception al tancar el fitxer");
             }
         }
 

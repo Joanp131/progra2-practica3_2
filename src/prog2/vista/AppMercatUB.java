@@ -196,8 +196,14 @@ public class AppMercatUB extends javax.swing.JFrame {
         JFileChooser chooser = new JFileChooser();
 
         int returnVal = chooser.showOpenDialog(this);
-        if(returnVal == JFileChooser.APPROVE_OPTION) {
-            adaptador.carregaDades(chooser.getSelectedFile().getName());
+        
+        try {
+            if(returnVal == JFileChooser.APPROVE_OPTION) {
+                System.out.println(chooser.getSelectedFile());
+                adaptador.carregaDades(chooser.getSelectedFile());
+            }
+        } catch (MercatException e) {
+            missatgeError(e.getMessage());
         }
     }//GEN-LAST:event_btnDadesCarregarActionPerformed
 
@@ -258,4 +264,16 @@ public class AppMercatUB extends javax.swing.JFrame {
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     // End of variables declaration//GEN-END:variables
+
+    private void missatgeError(String missatge) {
+        
+        System.out.println(missatge);
+        
+        CartellError cartell = new CartellError(this, true, missatge);
+        cartell.pack();
+        cartell.setLocationRelativeTo(null);
+        cartell.setVisible(true);
+    }
+            
+    
 }
