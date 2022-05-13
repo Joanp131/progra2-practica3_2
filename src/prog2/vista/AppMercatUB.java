@@ -5,17 +5,23 @@
  */
 package prog2.vista;
 
+import prog2.adaptador.Adaptador;
+
+import javax.swing.*;
+
 /**
  *
  * @author mataules
  */
 public class AppMercatUB extends javax.swing.JFrame {
 
+    Adaptador adaptador;
     /**
      * Creates new form AppMercatUB
      */
     public AppMercatUB() {
         initComponents();
+        adaptador = new Adaptador();
     }
 
     /**
@@ -35,7 +41,6 @@ public class AppMercatUB extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         jMenuItem3 = new javax.swing.JMenuItem();
         jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
-        jOptionPane1 = new javax.swing.JOptionPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
@@ -78,6 +83,8 @@ public class AppMercatUB extends javax.swing.JFrame {
         jLabel1.setToolTipText("");
         jPanel1.add(jLabel1, "card2");
 
+        jPanel2.setComponentPopupMenu(jPopupMenu1);
+
         btnArticles.setText("Gestionar Articles");
         btnArticles.setComponentPopupMenu(jPopupMenu1);
         btnArticles.addActionListener(new java.awt.event.ActionListener() {
@@ -93,6 +100,11 @@ public class AppMercatUB extends javax.swing.JFrame {
         btnDadesGuardar.setText("Guardar Dades");
 
         btnDadesCarregar.setText("Carregar Dades");
+        btnDadesCarregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDadesCarregarActionPerformed(evt);
+            }
+        });
 
         btnSortir.setText("Sortir");
         btnSortir.addActionListener(new java.awt.event.ActionListener() {
@@ -179,6 +191,16 @@ public class AppMercatUB extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnSortirActionPerformed
 
+    private void btnDadesCarregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDadesCarregarActionPerformed
+        // TODO add your handling code here:
+        JFileChooser chooser = new JFileChooser();
+
+        int returnVal = chooser.showOpenDialog(this);
+        if(returnVal == JFileChooser.APPROVE_OPTION) {
+            adaptador.carregaDades(chooser.getSelectedFile().getName());
+        }
+    }//GEN-LAST:event_btnDadesCarregarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -230,7 +252,6 @@ public class AppMercatUB extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JOptionPane jOptionPane1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPopupMenu jPopupMenu1;
