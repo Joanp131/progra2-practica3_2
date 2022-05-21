@@ -94,6 +94,11 @@ public class AppMercatUB extends javax.swing.JFrame {
         });
 
         btnClients.setText("Gestionar Clients");
+        btnClients.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClientsActionPerformed(evt);
+            }
+        });
 
         btnComandes.setText("Gestionar Comandes");
 
@@ -206,6 +211,16 @@ public class AppMercatUB extends javax.swing.JFrame {
             missatgeError(e.getMessage());
         }
     }//GEN-LAST:event_btnDadesCarregarActionPerformed
+
+    private void btnClientsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientsActionPerformed
+        // TODO add your handling code here:
+        GestioClients finestraClients = new GestioClients(this, true, adaptador);
+        
+        finestraClients.setTitle("Gestionar Clients");
+        finestraClients.pack();
+        finestraClients.setLocationRelativeTo(null);
+        finestraClients.setVisible(true);
+    }//GEN-LAST:event_btnClientsActionPerformed
 
     /**
      * @param args the command line arguments
