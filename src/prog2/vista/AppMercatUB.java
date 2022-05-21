@@ -206,6 +206,8 @@ public class AppMercatUB extends javax.swing.JFrame {
             if(returnVal == JFileChooser.APPROVE_OPTION) {
                 System.out.println(chooser.getSelectedFile());
                 adaptador.carregaDades(chooser.getSelectedFile());
+                
+                JOptionPane.showMessageDialog(this, "Dades recuperades correctament!", "Informació", JOptionPane.INFORMATION_MESSAGE);
             }
         } catch (MercatException e) {
             missatgeError(e.getMessage());

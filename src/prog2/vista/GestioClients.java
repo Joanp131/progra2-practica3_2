@@ -21,7 +21,9 @@ public class GestioClients extends javax.swing.JDialog {
     public GestioClients(java.awt.Frame parent, boolean modal, Adaptador adaptador) {
         super(parent, modal);
         initComponents();
+        
         this.adaptador = adaptador;
+        actualitzarLlistaClients();
     }
 
     /**
@@ -40,16 +42,21 @@ public class GestioClients extends javax.swing.JDialog {
         jPanel10 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jPanel11 = new javax.swing.JPanel();
-        labelNom = new javax.swing.JTextField();
+        jPanel1 = new javax.swing.JPanel();
         labelCorreu = new javax.swing.JTextField();
+        buttonEsborrar = new javax.swing.JButton();
         labelAdreca = new javax.swing.JTextField();
         checkPremium = new javax.swing.JCheckBox();
-        buttonEsborrar = new javax.swing.JButton();
+        labelNom = new javax.swing.JTextField();
         buttonAfegir = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
-        jPanel9 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        textAreaLlistaClients = new javax.swing.JTextArea();
+        jPanel3 = new javax.swing.JPanel();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
 
         jPanel4.setLayout(new java.awt.CardLayout());
 
@@ -63,52 +70,45 @@ public class GestioClients extends javax.swing.JDialog {
 
         jPanel7.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+        jPanel10.setLayout(new java.awt.CardLayout());
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Afegir un Client");
-
-        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
-        jPanel10.setLayout(jPanel10Layout);
-        jPanel10Layout.setHorizontalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel10Layout.createSequentialGroup()
-                .addGap(117, 117, 117)
-                .addComponent(jLabel2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel10Layout.setVerticalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addContainerGap())
-        );
-
-        labelNom.setBorder(javax.swing.BorderFactory.createTitledBorder("Nom"));
-        labelNom.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                labelNomKeyTyped(evt);
-            }
-        });
+        jPanel10.add(jLabel2, "card2");
 
         labelCorreu.setBorder(javax.swing.BorderFactory.createTitledBorder("Correu Electrònic"));
         labelCorreu.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                labelCorreuKeyTyped(evt);
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                labelCorreuKeyReleased(evt);
             }
         });
-
-        labelAdreca.setBorder(javax.swing.BorderFactory.createTitledBorder("Adreça Postal"));
-        labelAdreca.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                labelAdrecaKeyTyped(evt);
-            }
-        });
-
-        checkPremium.setText("Premium");
 
         buttonEsborrar.setText("Esborrar");
         buttonEsborrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonEsborrarActionPerformed(evt);
+            }
+        });
+
+        labelAdreca.setBorder(javax.swing.BorderFactory.createTitledBorder("Adreça Postal"));
+        labelAdreca.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                labelAdrecaKeyReleased(evt);
+            }
+        });
+
+        checkPremium.setText("Premium");
+
+        labelNom.setBorder(javax.swing.BorderFactory.createTitledBorder("Nom"));
+        labelNom.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                labelNomActionPerformed(evt);
+            }
+        });
+        labelNom.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                labelNomKeyReleased(evt);
             }
         });
 
@@ -120,36 +120,34 @@ public class GestioClients extends javax.swing.JDialog {
             }
         });
 
-        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
-        jPanel11.setLayout(jPanel11Layout);
-        jPanel11Layout.setHorizontalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel11Layout.createSequentialGroup()
-                .addContainerGap(30, Short.MAX_VALUE)
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
-                        .addComponent(buttonEsborrar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(buttonAfegir)
-                        .addGap(60, 60, 60))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
-                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(labelAdreca, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(buttonEsborrar, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(buttonAfegir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(checkPremium)
-                            .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(labelAdreca, javax.swing.GroupLayout.DEFAULT_SIZE, 274, Short.MAX_VALUE)
-                                .addComponent(labelNom, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(labelCorreu, javax.swing.GroupLayout.Alignment.LEADING)))
-                        .addGap(28, 28, 28))))
+                            .addComponent(labelNom)
+                            .addComponent(labelCorreu))))
+                .addContainerGap())
         );
 
-        jPanel11Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {labelAdreca, labelCorreu, labelNom});
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {labelAdreca, labelCorreu, labelNom});
 
-        jPanel11Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {buttonAfegir, buttonEsborrar});
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {buttonAfegir, buttonEsborrar});
 
-        jPanel11Layout.setVerticalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel11Layout.createSequentialGroup()
-                .addGap(31, 31, 31)
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
                 .addComponent(labelNom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(labelCorreu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -157,63 +155,116 @@ public class GestioClients extends javax.swing.JDialog {
                 .addComponent(labelAdreca, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
                 .addComponent(checkPremium)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(buttonEsborrar)
                     .addComponent(buttonAfegir))
-                .addGap(46, 46, 46))
+                .addContainerGap())
         );
 
-        jPanel11Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {labelAdreca, labelCorreu, labelNom});
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {labelAdreca, labelCorreu, labelNom});
+
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {buttonAfegir, buttonEsborrar});
+
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
+                .addContainerGap(39, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38))
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(19, 19, 19))
+        );
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+            .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(24, 24, 24))
         );
 
         jPanel5.add(jPanel7);
+
+        jPanel8.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel8.setToolTipText("");
+        jPanel8.setCursor(new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR));
+        jPanel8.setEnabled(false);
+        jPanel8.setFocusable(false);
+
+        textAreaLlistaClients.setEditable(false);
+        textAreaLlistaClients.setColumns(20);
+        textAreaLlistaClients.setLineWrap(true);
+        textAreaLlistaClients.setRows(5);
+        textAreaLlistaClients.setFocusable(false);
+        jScrollPane1.setViewportView(textAreaLlistaClients);
+
+        jButton2.setText("Tornar al menú principal");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 298, Short.MAX_VALUE)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 528, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 440, Short.MAX_VALUE)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         jPanel5.add(jPanel8);
-
-        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
-        jPanel9.setLayout(jPanel9Layout);
-        jPanel9Layout.setHorizontalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 298, Short.MAX_VALUE)
-        );
-        jPanel9Layout.setVerticalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 440, Short.MAX_VALUE)
-        );
-
-        jPanel5.add(jPanel9);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -221,10 +272,10 @@ public class GestioClients extends javax.swing.JDialog {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 934, Short.MAX_VALUE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -239,40 +290,67 @@ public class GestioClients extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void buttonEsborrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonEsborrarActionPerformed
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        esborrarContingut();
-    }//GEN-LAST:event_buttonEsborrarActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void labelNomKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_labelNomKeyTyped
-        // TODO add your handling code here:
-        comprovaLabelsBuits();
-    }//GEN-LAST:event_labelNomKeyTyped
-
-    private void labelCorreuKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_labelCorreuKeyTyped
-        // TODO add your handling code here:
-        comprovaLabelsBuits();
-    }//GEN-LAST:event_labelCorreuKeyTyped
-
-    private void labelAdrecaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_labelAdrecaKeyTyped
-        // TODO add your handling code here:
-        comprovaLabelsBuits();
-    }//GEN-LAST:event_labelAdrecaKeyTyped
-
+    /**
+     * Prova a afegir un nou client a la llista de clients en prèmer el botó corresponent
+     * @param evt 
+     */
     private void buttonAfegirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAfegirActionPerformed
         // TODO add your handling code here:
         try {
             adaptador.afegirClient(labelCorreu.getText(), labelNom.getText(), labelAdreca.getText(), checkPremium.isSelected());
             System.out.println(adaptador.recuperaClients());
-            
+
             JOptionPane.showMessageDialog(this, "Client afegit correctament!", "Informació", JOptionPane.INFORMATION_MESSAGE);
-            
+
+            actualitzarLlistaClients();
             esborrarContingut();
+            buttonAfegir.setEnabled(false);
+
         } catch (MercatException e) {
             missatgeError(e.getMessage());
         }
     }//GEN-LAST:event_buttonAfegirActionPerformed
 
+    private void labelNomKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_labelNomKeyReleased
+        // TODO add your handling code here:
+        comprovaLabelsBuits();
+    }//GEN-LAST:event_labelNomKeyReleased
+
+    private void labelAdrecaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_labelAdrecaKeyReleased
+        // TODO add your handling code here:
+        comprovaLabelsBuits();
+    }//GEN-LAST:event_labelAdrecaKeyReleased
+
+    private void buttonEsborrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonEsborrarActionPerformed
+        // TODO add your handling code here:
+        esborrarContingut();
+    }//GEN-LAST:event_buttonEsborrarActionPerformed
+
+    private void labelCorreuKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_labelCorreuKeyReleased
+        // TODO add your handling code here:
+        comprovaLabelsBuits();
+    }//GEN-LAST:event_labelCorreuKeyReleased
+
+    private void labelNomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_labelNomActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_labelNomActionPerformed
+
+    /**
+     * Comprova els tres camps de text d'afegir client:
+     * <ul>
+     *  <li>Nom del client</li>
+     *  <li>Correu electrònic</li>
+     *  <li>Adreça Postal</li>
+     * </ul>
+     * 
+     * En el cas que algun dels tres camps estigui buit, desactiva el botó que permet crear un nou client
+     * Si els tres camps de text estan plens, activa el botó permetent que es creÏ el nou client
+     */
     private void comprovaLabelsBuits() {
         if(labelNom.getText().equals("") || labelAdreca.getText().equals("") || labelCorreu.getText().equals(""))
             buttonAfegir.setEnabled(false);
@@ -280,6 +358,10 @@ public class GestioClients extends javax.swing.JDialog {
             buttonAfegir.setEnabled(true);
     }
     
+    /**
+     * Mostra una finestra amb  un missatge d'error personalitzat
+     * @param missatge Misatge a mostrar en el diàleg
+     */
     private void missatgeError(String missatge) {
         
         System.out.println(missatge);
@@ -287,6 +369,9 @@ public class GestioClients extends javax.swing.JDialog {
         JOptionPane.showMessageDialog(this, missatge, "Error", JOptionPane.ERROR_MESSAGE);
     }
     
+    /**
+     * Esborra el contingut de tots els camps de text i desmarca les <code>JCheckBox</code>
+     */
     private void esborrarContingut() {
         labelAdreca.setText("");
         labelCorreu.setText("");
@@ -294,21 +379,29 @@ public class GestioClients extends javax.swing.JDialog {
         checkPremium.setSelected(false);
     }
     
+    private void actualitzarLlistaClients() {
+        textAreaLlistaClients.setText(adaptador.recuperaClients());
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonAfegir;
     private javax.swing.JButton buttonEsborrar;
     private javax.swing.JCheckBox checkPremium;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField labelAdreca;
     private javax.swing.JTextField labelCorreu;
     private javax.swing.JTextField labelNom;
+    private javax.swing.JTextArea textAreaLlistaClients;
     // End of variables declaration//GEN-END:variables
 }
