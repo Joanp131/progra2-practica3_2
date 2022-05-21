@@ -269,10 +269,7 @@ public class AppMercatUB extends javax.swing.JFrame {
         
         System.out.println(missatge);
         
-        CartellError cartell = new CartellError(this, true, missatge);
-        cartell.pack();
-        cartell.setLocationRelativeTo(null);
-        cartell.setVisible(true);
+        JOptionPane.showMessageDialog(this, missatge, "Titol?", JOptionPane.ERROR_MESSAGE);
     }
             
     
