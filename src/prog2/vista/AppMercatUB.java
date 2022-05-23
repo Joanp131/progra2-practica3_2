@@ -74,6 +74,7 @@ public class AppMercatUB extends javax.swing.JFrame {
         jPopupMenu1.add(jRadioButtonMenuItem1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jPanel1.setLayout(new java.awt.CardLayout());
 
@@ -101,6 +102,11 @@ public class AppMercatUB extends javax.swing.JFrame {
         });
 
         btnComandes.setText("Gestionar Comandes");
+        btnComandes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnComandesActionPerformed(evt);
+            }
+        });
 
         btnDadesGuardar.setText("Guardar Dades");
 
@@ -194,6 +200,7 @@ public class AppMercatUB extends javax.swing.JFrame {
     private void btnSortirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSortirActionPerformed
         // TODO add your handling code here:
         this.dispose();
+        System.exit(0);
     }//GEN-LAST:event_btnSortirActionPerformed
 
     private void btnDadesCarregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDadesCarregarActionPerformed
@@ -223,6 +230,16 @@ public class AppMercatUB extends javax.swing.JFrame {
         finestraClients.setLocationRelativeTo(null);
         finestraClients.setVisible(true);
     }//GEN-LAST:event_btnClientsActionPerformed
+
+    private void btnComandesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComandesActionPerformed
+        // TODO add your handling code here:
+        GestioComandes finestraComandes = new GestioComandes(this, true, adaptador);
+        
+        finestraComandes.setTitle("Gestionar Comandes");
+        finestraComandes.pack();
+        finestraComandes.setLocationRelativeTo(null);
+        finestraComandes.setVisible(true);
+    }//GEN-LAST:event_btnComandesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -286,7 +303,7 @@ public class AppMercatUB extends javax.swing.JFrame {
         
         System.out.println(missatge);
         
-        JOptionPane.showMessageDialog(this, missatge, "Titol?", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(this, missatge, "Error", JOptionPane.ERROR_MESSAGE);
     }
             
     

@@ -7,12 +7,21 @@ import prog2.model.Dades;
 import prog2.vista.MercatException;
 
 import java.io.*;
+import java.util.ArrayList;
 
 public class Adaptador {
     private Dades dades;
 
     public Adaptador() {
         dades = new Dades();
+    }
+
+    public Dades getDades() {
+        return dades;
+    }
+
+    public void setDades(Dades dades) {
+        this.dades = dades;
     }
     
     public void afegirArticle(String id, String nom, float preu, int temps, boolean admetUrgent) throws MercatException {
@@ -27,6 +36,17 @@ public class Adaptador {
         }
         
         return s.isEmpty() ? "La llista d'articles està buida" : s;
+    }
+    
+    public ArrayList<String> recuperaNomArticles() {
+        
+        ArrayList<String> noms = new ArrayList<>();
+        
+        for(Article a : dades.recuperaArticles()) {
+            noms.add(a.getNom());
+        }
+        
+        return noms;
     }
     
     public void afegirClient(String email, String nom, String adreca, boolean isPremium) throws MercatException {
