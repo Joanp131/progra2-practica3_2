@@ -101,11 +101,6 @@ public class GestioClients extends javax.swing.JDialog {
         checkPremium.setText("Premium");
 
         labelNom.setBorder(javax.swing.BorderFactory.createTitledBorder("Nom"));
-        labelNom.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                labelNomActionPerformed(evt);
-            }
-        });
         labelNom.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 labelNomKeyReleased(evt);
@@ -335,10 +330,6 @@ public class GestioClients extends javax.swing.JDialog {
         // TODO add your handling code here:
         comprovaLabelsBuits();
     }//GEN-LAST:event_labelCorreuKeyReleased
-
-    private void labelNomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_labelNomActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_labelNomActionPerformed
 
     /**
      * Comprova els tres camps de text d'afegir client:
