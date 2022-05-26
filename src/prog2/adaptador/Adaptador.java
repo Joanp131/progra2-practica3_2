@@ -49,6 +49,17 @@ public class Adaptador {
         return noms;
     }
     
+    public ArrayList<String> recuperarNomClients() {
+        
+        ArrayList<String> noms = new ArrayList<>();
+        
+        for(Client c : dades.recuperaClients()) {
+            noms.add(c.getNom());
+        }
+        
+        return noms;        
+    }
+    
     public void afegirClient(String email, String nom, String adreca, boolean isPremium) throws MercatException {
         dades.afegirClient(email, nom, adreca, isPremium);
     }

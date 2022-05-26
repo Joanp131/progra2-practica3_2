@@ -25,6 +25,7 @@ public class GestioComandes extends javax.swing.JDialog {
         
         this.adaptador = adaptador;
         actualitzarArticles();
+        actualitzarClients();
     }
 
     /**
@@ -50,6 +51,10 @@ public class GestioComandes extends javax.swing.JDialog {
         llistaArticles = new javax.swing.JComboBox<>();
         jPanel10 = new javax.swing.JPanel();
         llistaClients = new javax.swing.JComboBox<>();
+        jPanel11 = new javax.swing.JPanel();
+        spinnerQuantitat = new javax.swing.JSpinner();
+        jPanel12 = new javax.swing.JPanel();
+        checkBoxUrgent = new javax.swing.JCheckBox();
         jPanel3 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
 
@@ -64,7 +69,7 @@ public class GestioComandes extends javax.swing.JDialog {
         jLabel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel4.add(jLabel1, "card2");
 
-        jPanel2.setLayout(new java.awt.GridLayout());
+        jPanel2.setLayout(new java.awt.GridLayout(1, 0));
 
         jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
@@ -75,12 +80,17 @@ public class GestioComandes extends javax.swing.JDialog {
         jLabel2.setText("Afegir Comandes");
         jPanel6.add(jLabel2, "card2");
 
-        jPanel8.setLayout(new java.awt.GridLayout());
+        jPanel8.setLayout(new java.awt.GridLayout(1, 0));
 
         buttonEsborrarText.setText("Esborrar");
         jPanel8.add(buttonEsborrarText);
 
         buttonAfegir.setText("Afegit Comanda");
+        buttonAfegir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonAfegirActionPerformed(evt);
+            }
+        });
         jPanel8.add(buttonAfegir);
 
         llistaArticles.setBorder(javax.swing.BorderFactory.createTitledBorder("Escollir Article"));
@@ -131,16 +141,57 @@ public class GestioComandes extends javax.swing.JDialog {
                 .addContainerGap())
         );
 
+        spinnerQuantitat.setBorder(javax.swing.BorderFactory.createTitledBorder("Nombre d'articles a la comanda"));
+        spinnerQuantitat.setValue(1);
+
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(spinnerQuantitat)
+                .addContainerGap())
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(spinnerQuantitat)
+                .addContainerGap())
+        );
+
+        checkBoxUrgent.setText("Comanda Urgent");
+
+        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+        jPanel12.setLayout(jPanel12Layout);
+        jPanel12Layout.setHorizontalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(checkBoxUrgent)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel12Layout.setVerticalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(checkBoxUrgent)
+                .addContainerGap(25, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
-                    .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
+                    .addComponent(jPanel9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel7Layout.setVerticalGroup(
@@ -150,7 +201,11 @@ public class GestioComandes extends javax.swing.JDialog {
                 .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(19, 19, 19)
                 .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 186, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
                 .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -236,6 +291,22 @@ public class GestioComandes extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_llistaClientsActionPerformed
 
+    private void buttonAfegirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAfegirActionPerformed
+        // TODO add your handling code here:
+        int articlePos = llistaArticles.getSelectedIndex();
+        int clientPos = llistaClients.getSelectedIndex();
+        int quantitat = (Integer)spinnerQuantitat.getValue();
+        boolean urgent = checkBoxUrgent.isSelected();
+        
+        try {
+            adaptador.afegirComanda(articlePos, clientPos, quantitat, urgent);
+            
+            JOptionPane.showMessageDialog(this, "Comanda afegida correctament!", "Informació", JOptionPane.INFORMATION_MESSAGE);
+        } catch(MercatException e) {
+            missatgeError(e.getMessage());
+        }
+    }//GEN-LAST:event_buttonAfegirActionPerformed
+
     private void actualitzarArticles() {
         ArrayList<String> articles = adaptador.recuperaNomArticles();
         
@@ -248,6 +319,19 @@ public class GestioComandes extends javax.swing.JDialog {
             }
         }
                 
+    }
+    
+    private void actualitzarClients() {
+        ArrayList<String> clients = adaptador.recuperarNomClients();
+        
+        if (clients.isEmpty()) {
+            llistaClients.addItem("La llista de Clients és buida");
+            llistaClients.setEnabled(false);
+        } else {
+            for(String client : clients) {
+                llistaClients.addItem(client);
+            }
+        }
     }
     
     /**
@@ -264,10 +348,13 @@ public class GestioComandes extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonAfegir;
     private javax.swing.JButton buttonEsborrarText;
+    private javax.swing.JCheckBox checkBoxUrgent;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -278,5 +365,6 @@ public class GestioComandes extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel9;
     private javax.swing.JComboBox<String> llistaArticles;
     private javax.swing.JComboBox<String> llistaClients;
+    private javax.swing.JSpinner spinnerQuantitat;
     // End of variables declaration//GEN-END:variables
 }

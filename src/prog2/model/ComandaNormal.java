@@ -1,6 +1,7 @@
 package prog2.model;
 
 import java.util.Date;
+import prog2.vista.MercatException;
 
 /**
  * Subclasse de Comanda
@@ -9,7 +10,7 @@ import java.util.Date;
  */
 public class ComandaNormal extends Comanda {
 
-    public ComandaNormal(Client client, Article article, int nombreArticles) {
+    public ComandaNormal(Client client, Article article, int nombreArticles) throws MercatException {
         super(client, article, nombreArticles);
     }
 

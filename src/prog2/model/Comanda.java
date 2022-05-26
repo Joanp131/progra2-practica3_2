@@ -1,5 +1,7 @@
 package prog2.model;
 
+import prog2.vista.MercatException;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -22,7 +24,7 @@ public abstract class Comanda implements Serializable{
      * @param article Article que es demana mitjançant la comanda
      * @param nombreArticles Nombre d'articles que conté la comanda
      */
-    public Comanda(Client client, Article article, int nombreArticles) {
+    public Comanda(Client client, Article article, int nombreArticles) throws MercatException {
         this.client = client;
         this.article = article;
         this.nombreArticles = nombreArticles;
@@ -30,6 +32,11 @@ public abstract class Comanda implements Serializable{
         dataCreacio = new Date();
         dataEnviat = calcularDataEnviament(dataCreacio);
         dataRebut = calcularDataRebut(dataCreacio);
+        
+        if (nombreArticles <= 0) {
+            throw new MercatException("El nombre d'articles ha de ser més gran que 0");
+        }
+        
     }
 
     //<editor-fold desc="Getters i Setters">
