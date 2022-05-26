@@ -298,7 +298,6 @@ public class GestioClients extends javax.swing.JDialog {
         // TODO add your handling code here:
         try {
             adaptador.afegirClient(labelCorreu.getText(), labelNom.getText(), labelAdreca.getText(), checkPremium.isSelected());
-            System.out.println(adaptador.recuperaClients());
 
             JOptionPane.showMessageDialog(this, "Client afegit correctament!", "Informació", JOptionPane.INFORMATION_MESSAGE);
 
@@ -371,7 +370,11 @@ public class GestioClients extends javax.swing.JDialog {
     }
     
     private void actualitzarLlistaClients() {
-        textAreaLlistaClients.setText(adaptador.recuperaClients());
+        textAreaLlistaClients.setText("");
+        
+        for(String s : adaptador.recuperaClients()) {
+            textAreaLlistaClients.append(s + '\n');
+        }
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables

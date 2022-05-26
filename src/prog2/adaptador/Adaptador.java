@@ -28,50 +28,31 @@ public class Adaptador {
         dades.afegirArticle(id, nom, preu, temps, admetUrgent);
     }
     
-    public String recuperaArticles(){
-        String s = "";
-        
-        for(Article article : dades.recuperaArticles()){
-            s += article.toString() + "\n";
-        }
-        
-        return s.isEmpty() ? "La llista d'articles està buida" : s;
-    }
-    
-    public ArrayList<String> recuperaNomArticles() {
+    public ArrayList<String> recuperaArticles() {
         
         ArrayList<String> noms = new ArrayList<>();
         
         for(Article a : dades.recuperaArticles()) {
-            noms.add(a.getNom());
+            noms.add(a.toString());
         }
         
         return noms;
-    }
     
-    public ArrayList<String> recuperarNomClients() {
-        
-        ArrayList<String> noms = new ArrayList<>();
-        
-        for(Client c : dades.recuperaClients()) {
-            noms.add(c.getNom());
-        }
-        
-        return noms;        
     }
     
     public void afegirClient(String email, String nom, String adreca, boolean isPremium) throws MercatException {
         dades.afegirClient(email, nom, adreca, isPremium);
     }
     
-    public String recuperaClients() {
-        String s = "";
+    public ArrayList<String> recuperaClients() {
         
-        for(Client client : dades.recuperaClients()){
-            s += client.toString() + "\n";
+        ArrayList<String> noms = new ArrayList<>();
+        
+        for(Client c : dades.recuperaClients()) {
+            noms.add(c.toString());
         }
         
-        return s.isEmpty() ? "La llista de clients està buida" : s;
+        return noms;        
     }
 
     public void afegirComanda(int articlePos, int clientPos, int quantitat, boolean esUrgent) throws MercatException {
@@ -82,24 +63,25 @@ public class Adaptador {
         dades.esborrarComanda(comandaPos);
     }
     
-    public String recuperaComandes() {
-        String s = "";
+    public ArrayList<String> recuperaComandes() {
         
-        for(Comanda comanda : dades.recuperaComandes()){
-            s += comanda.toString() + "\n";
-        }
+        ArrayList<String> comandes = new ArrayList<>();
         
-        return s.isEmpty() ? "La llista de comandes està buida" : s;
+        for(Comanda c : dades.recuperaComandes())
+            comandes.add(c.toString());
+        
+        return comandes;
     }
     
-    public String recuperaComandesUrgents() {
-        String s = "";
+    public ArrayList<String> recuperaComandesUrgents() {
+        
+        ArrayList<String> comandes = new ArrayList<>();
         
         for(Comanda comandaUrgent : dades.recuperaComandesUrgents()){
-            s += comandaUrgent.toString() + "\n";
+            comandes.add(comandaUrgent.toString() + "\n");
         }
         
-        return s.isEmpty() ? "La llista de comandes urgents està buida" : s;
+        return comandes;
     }
     
     public void guardaDades(String fitxerOrigen) throws MercatException {
