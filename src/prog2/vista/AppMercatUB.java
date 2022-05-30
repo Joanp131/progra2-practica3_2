@@ -247,7 +247,6 @@ public class AppMercatUB extends javax.swing.JFrame {
     }//GEN-LAST:event_btnComandesActionPerformed
 
     private void btnDadesGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDadesGuardarActionPerformed
-        // TODO add your handling code here:
         JFileChooser chooser = new JFileChooser();
 
         int returnVal = chooser.showOpenDialog(this);

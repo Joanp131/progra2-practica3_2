@@ -292,7 +292,6 @@ public class GestioClients extends javax.swing.JDialog {
      * @param evt Event
      */
     private void jButtonExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExitActionPerformed
-        // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_jButtonExitActionPerformed
 
@@ -302,7 +301,6 @@ public class GestioClients extends javax.swing.JDialog {
      * @param evt 
      */
     private void jButtonAfegirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAfegirActionPerformed
-        // TODO add your handling code here:
         try {
             adaptador.afegirClient(jtextFieldCorreu.getText(), jTextFieldNom.getText(), jTextFieldAdreca.getText(), jCheckBoxPremium.isSelected());
 
@@ -322,7 +320,6 @@ public class GestioClients extends javax.swing.JDialog {
      * @param evt Event
      */
     private void jTextFieldNomKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldNomKeyReleased
-        // TODO add your handling code here:
         comprovaLabelsBuits();
     }//GEN-LAST:event_jTextFieldNomKeyReleased
 
@@ -331,7 +328,6 @@ public class GestioClients extends javax.swing.JDialog {
      * @param evt Event
      */
     private void jtextFieldCorreuKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtextFieldCorreuKeyReleased
-        // TODO add your handling code here:
         comprovaLabelsBuits();
     }//GEN-LAST:event_jtextFieldCorreuKeyReleased
 
@@ -340,7 +336,6 @@ public class GestioClients extends javax.swing.JDialog {
      * @param evt Event
      */
     private void jTextFieldAdrecaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldAdrecaKeyReleased
-        // TODO add your handling code here:
         comprovaLabelsBuits();
     }//GEN-LAST:event_jTextFieldAdrecaKeyReleased
 
@@ -368,7 +363,6 @@ public class GestioClients extends javax.swing.JDialog {
      * @param evt Event
      */
     private void jButtonEsborrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEsborrarActionPerformed
-        // TODO add your handling code here:
         esborrarContingut();
     }//GEN-LAST:event_jButtonEsborrarActionPerformed
 

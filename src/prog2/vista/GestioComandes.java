@@ -74,7 +74,6 @@ public class GestioComandes extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(0, 102, 153));
-        setMaximumSize(new java.awt.Dimension(1074, 570));
         setResizable(false);
 
         jPanel4.setLayout(new java.awt.CardLayout());
@@ -107,11 +106,6 @@ public class GestioComandes extends javax.swing.JDialog {
         jPanel8.add(jButtonAfegir);
 
         jComboBoxArticles.setBorder(javax.swing.BorderFactory.createTitledBorder("Escollir Article"));
-        jComboBoxArticles.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxArticlesActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -131,11 +125,6 @@ public class GestioComandes extends javax.swing.JDialog {
         );
 
         jComboBoxClients.setBorder(javax.swing.BorderFactory.createTitledBorder("Escollir Client"));
-        jComboBoxClients.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxClientsActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
@@ -382,14 +371,6 @@ public class GestioComandes extends javax.swing.JDialog {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jComboBoxArticlesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxArticlesActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxArticlesActionPerformed
-
-    private void jComboBoxClientsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxClientsActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxClientsActionPerformed
 
     /**
      * Acció del botó <code>Afegir Comanda</code>
