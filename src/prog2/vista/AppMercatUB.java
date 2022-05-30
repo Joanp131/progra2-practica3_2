@@ -109,6 +109,11 @@ public class AppMercatUB extends javax.swing.JFrame {
         });
 
         btnDadesGuardar.setText("Guardar Dades");
+        btnDadesGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDadesGuardarActionPerformed(evt);
+            }
+        });
 
         btnDadesCarregar.setText("Carregar Dades");
         btnDadesCarregar.addActionListener(new java.awt.event.ActionListener() {
@@ -240,6 +245,24 @@ public class AppMercatUB extends javax.swing.JFrame {
         finestraComandes.setLocationRelativeTo(null);
         finestraComandes.setVisible(true);
     }//GEN-LAST:event_btnComandesActionPerformed
+
+    private void btnDadesGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDadesGuardarActionPerformed
+        // TODO add your handling code here:
+        JFileChooser chooser = new JFileChooser();
+
+        int returnVal = chooser.showOpenDialog(this);
+        
+        try {
+            if(returnVal == JFileChooser.APPROVE_OPTION) {
+                System.out.println(chooser.getSelectedFile());
+                adaptador.guardaDades(chooser.getSelectedFile().toString());
+                
+                JOptionPane.showMessageDialog(this, "Dades guardades correctament!", "Informació", JOptionPane.INFORMATION_MESSAGE);
+            }
+        } catch (MercatException e) {
+            missatgeError(e.getMessage());
+        }
+    }//GEN-LAST:event_btnDadesGuardarActionPerformed
 
     /**
      * @param args the command line arguments
