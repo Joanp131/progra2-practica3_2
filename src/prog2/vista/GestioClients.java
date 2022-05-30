@@ -8,8 +8,9 @@ import javax.swing.JOptionPane;
 import prog2.adaptador.Adaptador;
 
 /**
+ * Crea una nova finestra que permet afegit i visualitzar tots els clients del model
  *
- * @author Joanp
+ * @author Dídac Díaz Funes i Joan Pau Condal Marco
  */
 public class GestioClients extends javax.swing.JDialog {
     
@@ -36,35 +37,35 @@ public class GestioClients extends javax.swing.JDialog {
     private void initComponents() {
 
         jPanel4 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        jLabelTitol = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         jPanel10 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        jLabelSubtitol = new javax.swing.JLabel();
         jPanel11 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
-        labelCorreu = new javax.swing.JTextField();
-        buttonEsborrar = new javax.swing.JButton();
-        labelAdreca = new javax.swing.JTextField();
-        checkPremium = new javax.swing.JCheckBox();
-        labelNom = new javax.swing.JTextField();
-        buttonAfegir = new javax.swing.JButton();
+        jtextFieldCorreu = new javax.swing.JTextField();
+        jButtonEsborrar = new javax.swing.JButton();
+        jTextFieldAdreca = new javax.swing.JTextField();
+        jCheckBoxPremium = new javax.swing.JCheckBox();
+        jTextFieldNom = new javax.swing.JTextField();
+        jButtonAfegir = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         textAreaLlistaClients = new javax.swing.JTextArea();
         jPanel3 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
+        jButtonExit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
 
         jPanel4.setLayout(new java.awt.CardLayout());
 
-        jLabel1.setFont(new java.awt.Font("sansserif", 1, 36)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Gestió de Clients");
-        jLabel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel4.add(jLabel1, "card2");
+        jLabelTitol.setFont(new java.awt.Font("sansserif", 1, 36)); // NOI18N
+        jLabelTitol.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelTitol.setText("Gestió de Clients");
+        jLabelTitol.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel4.add(jLabelTitol, "card2");
 
         jPanel5.setLayout(new javax.swing.BoxLayout(jPanel5, javax.swing.BoxLayout.LINE_AXIS));
 
@@ -72,46 +73,46 @@ public class GestioClients extends javax.swing.JDialog {
 
         jPanel10.setLayout(new java.awt.CardLayout());
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Afegir un Client");
-        jPanel10.add(jLabel2, "card2");
+        jLabelSubtitol.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabelSubtitol.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelSubtitol.setText("Afegir un Client");
+        jPanel10.add(jLabelSubtitol, "card2");
 
-        labelCorreu.setBorder(javax.swing.BorderFactory.createTitledBorder("Correu Electrònic"));
-        labelCorreu.addKeyListener(new java.awt.event.KeyAdapter() {
+        jtextFieldCorreu.setBorder(javax.swing.BorderFactory.createTitledBorder("Correu Electrònic"));
+        jtextFieldCorreu.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                labelCorreuKeyReleased(evt);
+                jtextFieldCorreuKeyReleased(evt);
             }
         });
 
-        buttonEsborrar.setText("Esborrar");
-        buttonEsborrar.addActionListener(new java.awt.event.ActionListener() {
+        jButtonEsborrar.setText("Esborrar");
+        jButtonEsborrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonEsborrarActionPerformed(evt);
+                jButtonEsborrarActionPerformed(evt);
             }
         });
 
-        labelAdreca.setBorder(javax.swing.BorderFactory.createTitledBorder("Adreça Postal"));
-        labelAdreca.addKeyListener(new java.awt.event.KeyAdapter() {
+        jTextFieldAdreca.setBorder(javax.swing.BorderFactory.createTitledBorder("Adreça Postal"));
+        jTextFieldAdreca.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                labelAdrecaKeyReleased(evt);
+                jTextFieldAdrecaKeyReleased(evt);
             }
         });
 
-        checkPremium.setText("Premium");
+        jCheckBoxPremium.setText("Premium");
 
-        labelNom.setBorder(javax.swing.BorderFactory.createTitledBorder("Nom"));
-        labelNom.addKeyListener(new java.awt.event.KeyAdapter() {
+        jTextFieldNom.setBorder(javax.swing.BorderFactory.createTitledBorder("Nom"));
+        jTextFieldNom.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                labelNomKeyReleased(evt);
+                jTextFieldNomKeyReleased(evt);
             }
         });
 
-        buttonAfegir.setText("Afegir Client");
-        buttonAfegir.setEnabled(false);
-        buttonAfegir.addActionListener(new java.awt.event.ActionListener() {
+        jButtonAfegir.setText("Afegir Client");
+        jButtonAfegir.setEnabled(false);
+        jButtonAfegir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonAfegirActionPerformed(evt);
+                jButtonAfegirActionPerformed(evt);
             }
         });
 
@@ -122,44 +123,44 @@ public class GestioClients extends javax.swing.JDialog {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(labelAdreca, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldAdreca, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(buttonEsborrar, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButtonEsborrar, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(buttonAfegir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jButtonAfegir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(checkPremium)
-                            .addComponent(labelNom)
-                            .addComponent(labelCorreu))))
+                            .addComponent(jCheckBoxPremium)
+                            .addComponent(jTextFieldNom)
+                            .addComponent(jtextFieldCorreu))))
                 .addContainerGap())
         );
 
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {labelAdreca, labelCorreu, labelNom});
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jTextFieldAdreca, jTextFieldNom, jtextFieldCorreu});
 
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {buttonAfegir, buttonEsborrar});
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jButtonAfegir, jButtonEsborrar});
 
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addComponent(labelNom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTextFieldNom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(labelCorreu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jtextFieldCorreu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(labelAdreca, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTextFieldAdreca, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
-                .addComponent(checkPremium)
+                .addComponent(jCheckBoxPremium)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonEsborrar)
-                    .addComponent(buttonAfegir))
+                    .addComponent(jButtonEsborrar)
+                    .addComponent(jButtonAfegir))
                 .addContainerGap())
         );
 
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {labelAdreca, labelCorreu, labelNom});
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jTextFieldAdreca, jTextFieldNom, jtextFieldCorreu});
 
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {buttonAfegir, buttonEsborrar});
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jButtonAfegir, jButtonEsborrar});
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
@@ -214,10 +215,10 @@ public class GestioClients extends javax.swing.JDialog {
         textAreaLlistaClients.setFocusable(false);
         jScrollPane1.setViewportView(textAreaLlistaClients);
 
-        jButton2.setText("Tornar al menú principal");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jButtonExit.setText("Tornar al menú principal");
+        jButtonExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jButtonExitActionPerformed(evt);
             }
         });
 
@@ -227,14 +228,14 @@ public class GestioClients extends javax.swing.JDialog {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButtonExit, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+                .addComponent(jButtonExit, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -285,50 +286,63 @@ public class GestioClients extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    /**
+     * Acció del botó <code>Tornar al menú principal</code>
+     * Tanca aquesta subfinestra
+     * @param evt Event
+     */
+    private void jButtonExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExitActionPerformed
         // TODO add your handling code here:
         this.dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_jButtonExitActionPerformed
 
     /**
-     * Prova a afegir un nou client a la llista de clients en prèmer el botó corresponent
+     * Acció del botó <code>Afegir Client</code>
+     * Afegeix un nou client al model
      * @param evt 
      */
-    private void buttonAfegirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAfegirActionPerformed
+    private void jButtonAfegirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAfegirActionPerformed
         // TODO add your handling code here:
         try {
-            adaptador.afegirClient(labelCorreu.getText(), labelNom.getText(), labelAdreca.getText(), checkPremium.isSelected());
+            adaptador.afegirClient(jtextFieldCorreu.getText(), jTextFieldNom.getText(), jTextFieldAdreca.getText(), jCheckBoxPremium.isSelected());
 
             JOptionPane.showMessageDialog(this, "Client afegit correctament!", "Informació", JOptionPane.INFORMATION_MESSAGE);
 
             actualitzarLlistaClients();
             esborrarContingut();
-            buttonAfegir.setEnabled(false);
+            jButtonAfegir.setEnabled(false);
 
         } catch (MercatException e) {
             missatgeError(e.getMessage());
         }
-    }//GEN-LAST:event_buttonAfegirActionPerformed
+    }//GEN-LAST:event_jButtonAfegirActionPerformed
 
-    private void labelNomKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_labelNomKeyReleased
+    /**
+     * Cada vegada que l'usuari escriu un caràcter al camp de text <code>Nom</code> es crida el mètode {@link #comprovaLabelsBuits()}
+     * @param evt Event
+     */
+    private void jTextFieldNomKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldNomKeyReleased
         // TODO add your handling code here:
         comprovaLabelsBuits();
-    }//GEN-LAST:event_labelNomKeyReleased
+    }//GEN-LAST:event_jTextFieldNomKeyReleased
 
-    private void labelAdrecaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_labelAdrecaKeyReleased
+    /**
+     * Cada vegada que l'usuari escriu un caràcter al camp de text <code>Correu Electrònic</code> es crida el mètode {@link #comprovaLabelsBuits()}
+     * @param evt Event
+     */
+    private void jtextFieldCorreuKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtextFieldCorreuKeyReleased
         // TODO add your handling code here:
         comprovaLabelsBuits();
-    }//GEN-LAST:event_labelAdrecaKeyReleased
+    }//GEN-LAST:event_jtextFieldCorreuKeyReleased
 
-    private void buttonEsborrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonEsborrarActionPerformed
-        // TODO add your handling code here:
-        esborrarContingut();
-    }//GEN-LAST:event_buttonEsborrarActionPerformed
-
-    private void labelCorreuKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_labelCorreuKeyReleased
+    /**
+     * Cada vegada que l'usuari escriu un caràcter al camp de text <code>Adreça postal</code> es crida el mètode {@link #comprovaLabelsBuits()}
+     * @param evt Event
+     */
+    private void jTextFieldAdrecaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldAdrecaKeyReleased
         // TODO add your handling code here:
         comprovaLabelsBuits();
-    }//GEN-LAST:event_labelCorreuKeyReleased
+    }//GEN-LAST:event_jTextFieldAdrecaKeyReleased
 
     /**
      * Comprova els tres camps de text d'afegir client:
@@ -337,17 +351,27 @@ public class GestioClients extends javax.swing.JDialog {
      *  <li>Correu electrònic</li>
      *  <li>Adreça Postal</li>
      * </ul>
-     * 
+     *
      * En el cas que algun dels tres camps estigui buit, desactiva el botó que permet crear un nou client
      * Si els tres camps de text estan plens, activa el botó permetent que es creÏ el nou client
      */
     private void comprovaLabelsBuits() {
-        if(labelNom.getText().equals("") || labelAdreca.getText().equals("") || labelCorreu.getText().equals(""))
-            buttonAfegir.setEnabled(false);
-        else 
-            buttonAfegir.setEnabled(true);
+        if(jTextFieldNom.getText().equals("") || jTextFieldAdreca.getText().equals("") || jtextFieldCorreu.getText().equals(""))
+            jButtonAfegir.setEnabled(false);
+        else
+            jButtonAfegir.setEnabled(true);
     }
-    
+
+    /**
+     * Acció del botó <code>Esborrar</code>
+     * Elimina tots els caràcters dels camps de text i desmarca la Check Box
+     * @param evt Event
+     */
+    private void jButtonEsborrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEsborrarActionPerformed
+        // TODO add your handling code here:
+        esborrarContingut();
+    }//GEN-LAST:event_jButtonEsborrarActionPerformed
+
     /**
      * Mostra una finestra amb  un missatge d'error personalitzat
      * @param missatge Misatge a mostrar en el diàleg
@@ -363,10 +387,10 @@ public class GestioClients extends javax.swing.JDialog {
      * Esborra el contingut de tots els camps de text i desmarca les <code>JCheckBox</code>
      */
     private void esborrarContingut() {
-        labelAdreca.setText("");
-        labelCorreu.setText("");
-        labelNom.setText("");
-        checkPremium.setSelected(false);
+        jTextFieldAdreca.setText("");
+        jtextFieldCorreu.setText("");
+        jTextFieldNom.setText("");
+        jCheckBoxPremium.setSelected(false);
     }
     
     private void actualitzarLlistaClients() {
@@ -378,12 +402,12 @@ public class GestioClients extends javax.swing.JDialog {
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton buttonAfegir;
-    private javax.swing.JButton buttonEsborrar;
-    private javax.swing.JCheckBox checkPremium;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton jButtonAfegir;
+    private javax.swing.JButton jButtonEsborrar;
+    private javax.swing.JButton jButtonExit;
+    private javax.swing.JCheckBox jCheckBoxPremium;
+    private javax.swing.JLabel jLabelSubtitol;
+    private javax.swing.JLabel jLabelTitol;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
@@ -393,9 +417,9 @@ public class GestioClients extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField labelAdreca;
-    private javax.swing.JTextField labelCorreu;
-    private javax.swing.JTextField labelNom;
+    private javax.swing.JTextField jTextFieldAdreca;
+    private javax.swing.JTextField jTextFieldNom;
+    private javax.swing.JTextField jtextFieldCorreu;
     private javax.swing.JTextArea textAreaLlistaClients;
     // End of variables declaration//GEN-END:variables
 }

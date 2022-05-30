@@ -51,7 +51,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="jLabel1">
+        <Component class="javax.swing.JLabel" name="jLabelTitol">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="sansserif" size="36" style="1"/>
@@ -115,7 +115,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="jLabel2">
+                <Component class="javax.swing.JLabel" name="jLabelSubtitol">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="18" style="1"/>
@@ -162,17 +162,17 @@
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="labelAdreca" linkSize="1" min="-2" pref="280" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldAdreca" linkSize="1" min="-2" pref="280" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="buttonEsborrar" linkSize="4" min="-2" pref="134" max="-2" attributes="0"/>
+                                          <Component id="jButtonEsborrar" linkSize="4" min="-2" pref="134" max="-2" attributes="0"/>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="buttonAfegir" linkSize="4" max="32767" attributes="0"/>
+                                          <Component id="jButtonAfegir" linkSize="4" max="32767" attributes="0"/>
                                       </Group>
                                       <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                          <Component id="checkPremium" min="-2" max="-2" attributes="0"/>
-                                          <Component id="labelNom" linkSize="1" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="labelCorreu" linkSize="1" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jCheckBoxPremium" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jTextFieldNom" linkSize="1" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jtextFieldCorreu" linkSize="1" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -184,17 +184,17 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                              <Component id="labelNom" linkSize="2" min="-2" max="-2" attributes="0"/>
+                              <Component id="jTextFieldNom" linkSize="2" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="labelCorreu" linkSize="2" min="-2" max="-2" attributes="0"/>
+                              <Component id="jtextFieldCorreu" linkSize="2" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="labelAdreca" linkSize="2" min="-2" pref="42" max="-2" attributes="0"/>
+                              <Component id="jTextFieldAdreca" linkSize="2" min="-2" pref="42" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                              <Component id="checkPremium" min="-2" max="-2" attributes="0"/>
+                              <Component id="jCheckBoxPremium" min="-2" max="-2" attributes="0"/>
                               <EmptySpace pref="80" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="buttonEsborrar" linkSize="5" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="buttonAfegir" linkSize="5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jButtonEsborrar" linkSize="5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jButtonAfegir" linkSize="5" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
@@ -202,7 +202,7 @@
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JTextField" name="labelCorreu">
+                    <Component class="javax.swing.JTextField" name="jtextFieldCorreu">
                       <Properties>
                         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
@@ -211,18 +211,18 @@
                         </Property>
                       </Properties>
                       <Events>
-                        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="labelCorreuKeyReleased"/>
+                        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtextFieldCorreuKeyReleased"/>
                       </Events>
                     </Component>
-                    <Component class="javax.swing.JButton" name="buttonEsborrar">
+                    <Component class="javax.swing.JButton" name="jButtonEsborrar">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Esborrar"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonEsborrarActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonEsborrarActionPerformed"/>
                       </Events>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="labelAdreca">
+                    <Component class="javax.swing.JTextField" name="jTextFieldAdreca">
                       <Properties>
                         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
@@ -231,15 +231,15 @@
                         </Property>
                       </Properties>
                       <Events>
-                        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="labelAdrecaKeyReleased"/>
+                        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jTextFieldAdrecaKeyReleased"/>
                       </Events>
                     </Component>
-                    <Component class="javax.swing.JCheckBox" name="checkPremium">
+                    <Component class="javax.swing.JCheckBox" name="jCheckBoxPremium">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Premium"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="labelNom">
+                    <Component class="javax.swing.JTextField" name="jTextFieldNom">
                       <Properties>
                         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
@@ -248,16 +248,16 @@
                         </Property>
                       </Properties>
                       <Events>
-                        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="labelNomKeyReleased"/>
+                        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jTextFieldNomKeyReleased"/>
                       </Events>
                     </Component>
-                    <Component class="javax.swing.JButton" name="buttonAfegir">
+                    <Component class="javax.swing.JButton" name="jButtonAfegir">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Afegir Client"/>
                         <Property name="enabled" type="boolean" value="false"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonAfegirActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonAfegirActionPerformed"/>
                       </Events>
                     </Component>
                   </SubComponents>
@@ -332,7 +332,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="jButton2" min="-2" pref="163" max="-2" attributes="0"/>
+                          <Component id="jButtonExit" min="-2" pref="163" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -341,19 +341,19 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jButton2" pref="35" max="32767" attributes="0"/>
+                          <Component id="jButtonExit" pref="35" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JButton" name="jButton2">
+                <Component class="javax.swing.JButton" name="jButtonExit">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Tornar al men&#xfa; principal"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonExitActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>

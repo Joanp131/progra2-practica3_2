@@ -10,8 +10,9 @@ import javax.swing.JOptionPane;
 import prog2.adaptador.Adaptador;
 
 /**
+ * Crea una nova finestra de diàleg que permet afegir, visualitzar i eliminar comandes del model
  *
- * @author Joanp
+ * @author Dídac Díaz Funes i Joan Pau Condal Marco
  */
 public class GestioComandes extends javax.swing.JDialog {
     
@@ -45,31 +46,31 @@ public class GestioComandes extends javax.swing.JDialog {
 
         jPanel5 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        jLabelTitol = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        jLabelSubtitolAfegir = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
-        buttonAfegir = new javax.swing.JButton();
+        jButtonAfegir = new javax.swing.JButton();
         jPanel9 = new javax.swing.JPanel();
-        llistaArticles = new javax.swing.JComboBox<>();
+        jComboBoxArticles = new javax.swing.JComboBox<>();
         jPanel10 = new javax.swing.JPanel();
-        llistaClients = new javax.swing.JComboBox<>();
+        jComboBoxClients = new javax.swing.JComboBox<>();
         jPanel11 = new javax.swing.JPanel();
-        spinnerQuantitat = new javax.swing.JSpinner();
+        jSpinnerQuantitat = new javax.swing.JSpinner();
         jPanel12 = new javax.swing.JPanel();
-        checkBoxAfegirUrgent = new javax.swing.JCheckBox();
+        jCheckBoxComandaUrgent = new javax.swing.JCheckBox();
         jPanel3 = new javax.swing.JPanel();
         jPanel13 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jListComandes = new javax.swing.JList<String>(listModel);
         jButtonEsborrar = new javax.swing.JButton();
-        buttonTancar = new javax.swing.JButton();
+        jButtonTancar = new javax.swing.JButton();
         jCheckBoxMostrarUrgents = new javax.swing.JCheckBox();
         jPanel14 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
+        jLabelSubtitolLlista = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(0, 102, 153));
@@ -78,11 +79,11 @@ public class GestioComandes extends javax.swing.JDialog {
 
         jPanel4.setLayout(new java.awt.CardLayout());
 
-        jLabel1.setFont(new java.awt.Font("sansserif", 1, 36)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Gestió de Comandes");
-        jLabel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel4.add(jLabel1, "card2");
+        jLabelTitol.setFont(new java.awt.Font("sansserif", 1, 36)); // NOI18N
+        jLabelTitol.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelTitol.setText("Gestió de Comandes");
+        jLabelTitol.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel4.add(jLabelTitol, "card2");
 
         jPanel2.setMaximumSize(new java.awt.Dimension(1062, 493));
 
@@ -90,25 +91,25 @@ public class GestioComandes extends javax.swing.JDialog {
 
         jPanel6.setLayout(new java.awt.CardLayout());
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Afegir Comandes");
-        jPanel6.add(jLabel2, "card2");
+        jLabelSubtitolAfegir.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabelSubtitolAfegir.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelSubtitolAfegir.setText("Afegir Comandes");
+        jPanel6.add(jLabelSubtitolAfegir, "card2");
 
         jPanel8.setLayout(new java.awt.GridLayout(1, 0));
 
-        buttonAfegir.setText("Afegir Comanda");
-        buttonAfegir.addActionListener(new java.awt.event.ActionListener() {
+        jButtonAfegir.setText("Afegir Comanda");
+        jButtonAfegir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonAfegirActionPerformed(evt);
+                jButtonAfegirActionPerformed(evt);
             }
         });
-        jPanel8.add(buttonAfegir);
+        jPanel8.add(jButtonAfegir);
 
-        llistaArticles.setBorder(javax.swing.BorderFactory.createTitledBorder("Escollir Article"));
-        llistaArticles.addActionListener(new java.awt.event.ActionListener() {
+        jComboBoxArticles.setBorder(javax.swing.BorderFactory.createTitledBorder("Escollir Article"));
+        jComboBoxArticles.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                llistaArticlesActionPerformed(evt);
+                jComboBoxArticlesActionPerformed(evt);
             }
         });
 
@@ -118,21 +119,21 @@ public class GestioComandes extends javax.swing.JDialog {
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(llistaArticles, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jComboBoxArticles, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(llistaArticles, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+                .addComponent(jComboBoxArticles, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        llistaClients.setBorder(javax.swing.BorderFactory.createTitledBorder("Escollir Client"));
-        llistaClients.addActionListener(new java.awt.event.ActionListener() {
+        jComboBoxClients.setBorder(javax.swing.BorderFactory.createTitledBorder("Escollir Client"));
+        jComboBoxClients.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                llistaClientsActionPerformed(evt);
+                jComboBoxClientsActionPerformed(evt);
             }
         });
 
@@ -142,20 +143,20 @@ public class GestioComandes extends javax.swing.JDialog {
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel10Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(llistaClients, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jComboBoxClients, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel10Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(llistaClients, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+                .addComponent(jComboBoxClients, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        spinnerQuantitat.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
-        spinnerQuantitat.setBorder(javax.swing.BorderFactory.createTitledBorder("Nombre d'articles a la comanda"));
-        spinnerQuantitat.setValue(1);
+        jSpinnerQuantitat.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
+        jSpinnerQuantitat.setBorder(javax.swing.BorderFactory.createTitledBorder("Nombre d'articles a la comanda"));
+        jSpinnerQuantitat.setValue(1);
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
@@ -163,18 +164,18 @@ public class GestioComandes extends javax.swing.JDialog {
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel11Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(spinnerQuantitat)
+                .addComponent(jSpinnerQuantitat)
                 .addContainerGap())
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel11Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(spinnerQuantitat)
+                .addComponent(jSpinnerQuantitat)
                 .addContainerGap())
         );
 
-        checkBoxAfegirUrgent.setText("Comanda Urgent");
+        jCheckBoxComandaUrgent.setText("Comanda Urgent");
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
@@ -182,14 +183,14 @@ public class GestioComandes extends javax.swing.JDialog {
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel12Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(checkBoxAfegirUrgent)
+                .addComponent(jCheckBoxComandaUrgent)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel12Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(checkBoxAfegirUrgent)
+                .addComponent(jCheckBoxComandaUrgent)
                 .addContainerGap(25, Short.MAX_VALUE))
         );
 
@@ -257,10 +258,10 @@ public class GestioComandes extends javax.swing.JDialog {
             }
         });
 
-        buttonTancar.setText("Torna al menú principal");
-        buttonTancar.addActionListener(new java.awt.event.ActionListener() {
+        jButtonTancar.setText("Torna al menú principal");
+        jButtonTancar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonTancarActionPerformed(evt);
+                jButtonTancarActionPerformed(evt);
             }
         });
 
@@ -281,7 +282,7 @@ public class GestioComandes extends javax.swing.JDialog {
                     .addGroup(jPanel13Layout.createSequentialGroup()
                         .addComponent(jButtonEsborrar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(buttonTancar))
+                        .addComponent(jButtonTancar))
                     .addGroup(jPanel13Layout.createSequentialGroup()
                         .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 573, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -299,18 +300,18 @@ public class GestioComandes extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonEsborrar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonTancar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButtonTancar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
-        jPanel13Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {buttonTancar, jButtonEsborrar});
+        jPanel13Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jButtonEsborrar, jButtonTancar});
 
         jPanel14.setLayout(new java.awt.CardLayout());
 
-        jLabel3.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Llista de comandes");
-        jPanel14.add(jLabel3, "card2");
+        jLabelSubtitolLlista.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabelSubtitolLlista.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelSubtitolLlista.setText("Llista de comandes");
+        jPanel14.add(jLabelSubtitolLlista, "card2");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -382,40 +383,62 @@ public class GestioComandes extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void llistaArticlesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_llistaArticlesActionPerformed
+    private void jComboBoxArticlesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxArticlesActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_llistaArticlesActionPerformed
+    }//GEN-LAST:event_jComboBoxArticlesActionPerformed
 
-    private void llistaClientsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_llistaClientsActionPerformed
+    private void jComboBoxClientsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxClientsActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_llistaClientsActionPerformed
+    }//GEN-LAST:event_jComboBoxClientsActionPerformed
 
-    private void buttonAfegirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAfegirActionPerformed
+    /**
+     * Acció del botó <code>Afegir Comanda</code>
+     * En prémer el botó, crea una nova comanda amb l'article, client i nombre d'articles seleccionats
+     * @param evt Event
+     */
+    private void jButtonAfegirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAfegirActionPerformed
         // TODO add your handling code here:
-        int articlePos = llistaArticles.getSelectedIndex();
-        int clientPos = llistaClients.getSelectedIndex();
-        int quantitat = (Integer)spinnerQuantitat.getValue();
-        boolean urgent = checkBoxAfegirUrgent.isSelected();
+        int articlePos = jComboBoxArticles.getSelectedIndex();
+        int clientPos = jComboBoxClients.getSelectedIndex();
+        int quantitat = (Integer)jSpinnerQuantitat.getValue();
+        boolean urgent = jCheckBoxComandaUrgent.isSelected();
         
         try {
             adaptador.afegirComanda(articlePos, clientPos, quantitat, urgent);
             actualitzarComandes();
-            JOptionPane.showMessageDialog(this, "Comanda afegida correctament!", "Informació", JOptionPane.INFORMATION_MESSAGE);
+
+            missatgeInfo("Comanda afegida correctament!");
         } catch(MercatException e) {
             missatgeError(e.getMessage());
         }
-    }//GEN-LAST:event_buttonAfegirActionPerformed
+    }//GEN-LAST:event_jButtonAfegirActionPerformed
 
+    /**
+     * Check Box <code>Mostra comandes urgents</code>
+     * Si aquesta opció està marcada, a la llista només es mostren les comandes urgents
+     * @param evt Event
+     */
     private void jCheckBoxMostrarUrgentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxMostrarUrgentsActionPerformed
         // TODO add your handling code here:
         actualitzarComandes();
     }//GEN-LAST:event_jCheckBoxMostrarUrgentsActionPerformed
 
-    private void buttonTancarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTancarActionPerformed
+    /**
+     * Acció del botó <code>Torna al menú principal</code>
+     * Tanca aquesta subfinestra
+     * @param evt Event
+     */
+    private void jButtonTancarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTancarActionPerformed
         // TODO add your handling code here:
         this.dispose();
-    }//GEN-LAST:event_buttonTancarActionPerformed
+    }//GEN-LAST:event_jButtonTancarActionPerformed
 
+    /**
+     * Acció del botó <code>Esborra les comandes seleccionades</code>
+     * Esborra totes les comandes seleccionades de la llista, començant per l'última seleccionada per evitar problemes d'índexos
+     * si alguna comanda no pot ser eliminada perquè ja ha estat enviada, s'avisa a l'usuari i no s'intenta eliminar cap més de les que estaven seleccionades
+     * @param evt
+     */
     private void jButtonEsborrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEsborrarActionPerformed
         // TODO add your handling code here:
         int[] selected = jListComandes.getSelectedIndices();
@@ -425,44 +448,56 @@ public class GestioComandes extends javax.swing.JDialog {
                 adaptador.esborrarComanda(i);
                 actualitzarComandes();
             }
-            
-            JOptionPane.showMessageDialog(this, "Comandes eliminades correctament!", "Informació", JOptionPane.INFORMATION_MESSAGE);
-            
+
+            missatgeInfo("Comandes eliminades correctament!");
         } catch (MercatException e) {
             missatgeError(e.getMessage());
         }
         
     }//GEN-LAST:event_jButtonEsborrarActionPerformed
 
+    /**
+     * Es crida al crear aquesta finestra i actualitza la ComboBox amb tots els articles del model.
+     * Si el model no conté cap article en el moment en que s'obre aquesta finestra ho fa saber a l'usuari i desactiva la ComboBox
+     */
     private void inicialitzaArticles() {
         ArrayList<String> articles = adaptador.recuperaArticles();
         
         if (articles.isEmpty()) {
-            llistaArticles.addItem("La llista d'articles és buida");
-            llistaArticles.setEnabled(false);
+            jComboBoxArticles.addItem("La llista d'articles és buida");
+            jComboBoxArticles.setEnabled(false);
         } else {
             for(String article : articles){
-                llistaArticles.addItem(article);
+                jComboBoxArticles.addItem(article);
             }
         }
                 
     }
-    
+
+    /**
+     * Es crida al crear aquesta finestra i actualitza la ComboBox amb tots els clients del model.
+     * Si el model no conté cap client en el moment en que s'obre aquesta finestra ho fa saber a l'usuari i desactiva la ComboBox
+     */
     private void inicialitzaClients() {
         ArrayList<String> clients = adaptador.recuperaClients();
         
         if (clients.isEmpty()) {
-            llistaClients.addItem("La llista de Clients és buida");
-            llistaClients.setEnabled(false);
+            jComboBoxClients.addItem("La llista de Clients és buida");
+            jComboBoxClients.setEnabled(false);
             
-            buttonAfegir.setEnabled(false);
+            jButtonAfegir.setEnabled(false);
         } else {
             for(String client : clients) {
-                llistaClients.addItem(client);
+                jComboBoxClients.addItem(client);
             }
         }
     }
-    
+
+    /**
+     * Mètode de suport que s'usa per actualitzar la llista de comandes amb totes les comandes del model
+     * Es crida en crear la finestra i també al fer qualsevol canvi, com esborrar o crear comandes
+     * També te en compte si la opció <code>Mostra només comandes urgents</code> està seleccionada
+     */
     private void actualitzarComandes() {
         
         boolean urgents = jCheckBoxMostrarUrgents.isSelected();
@@ -473,27 +508,34 @@ public class GestioComandes extends javax.swing.JDialog {
         for(String s : llistaComandes)
             listModel.addElement(s);
     }
+
+    /**
+     * Mostra una finestra amb informació
+     * @param missatge Informació a mostrar
+     */
+    private void missatgeInfo(String missatge) {
+        JOptionPane.showMessageDialog(this, missatge, "Informació", JOptionPane.INFORMATION_MESSAGE);
+    }
     
     /**
      * Mostra una finestra amb  un missatge d'error personalitzat
      * @param missatge Misatge a mostrar en el diàleg
      */
     private void missatgeError(String missatge) {
-        
-        System.out.println(missatge);
-        
         JOptionPane.showMessageDialog(this, missatge, "Error", JOptionPane.ERROR_MESSAGE);
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton buttonAfegir;
-    private javax.swing.JButton buttonTancar;
-    private javax.swing.JCheckBox checkBoxAfegirUrgent;
+    private javax.swing.JButton jButtonAfegir;
     private javax.swing.JButton jButtonEsborrar;
+    private javax.swing.JButton jButtonTancar;
+    private javax.swing.JCheckBox jCheckBoxComandaUrgent;
     private javax.swing.JCheckBox jCheckBoxMostrarUrgents;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JComboBox<String> jComboBoxArticles;
+    private javax.swing.JComboBox<String> jComboBoxClients;
+    private javax.swing.JLabel jLabelSubtitolAfegir;
+    private javax.swing.JLabel jLabelSubtitolLlista;
+    private javax.swing.JLabel jLabelTitol;
     private javax.swing.JList<String> jListComandes;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
@@ -510,8 +552,6 @@ public class GestioComandes extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JComboBox<String> llistaArticles;
-    private javax.swing.JComboBox<String> llistaClients;
-    private javax.swing.JSpinner spinnerQuantitat;
+    private javax.swing.JSpinner jSpinnerQuantitat;
     // End of variables declaration//GEN-END:variables
 }

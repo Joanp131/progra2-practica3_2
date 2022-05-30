@@ -189,7 +189,7 @@ public class AppMercatUB extends javax.swing.JFrame {
 
     private void btnArticlesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnArticlesActionPerformed
         // TODO add your handling code here:
-        GestioArticles finestraArticles = new GestioArticles(this, true);
+        GestioArticles finestraArticles = new GestioArticles(this, true, adaptador);
         
         finestraArticles.setTitle("Gestió Articles");
         finestraArticles.pack();
