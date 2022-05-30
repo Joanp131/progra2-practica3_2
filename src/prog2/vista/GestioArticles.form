@@ -190,10 +190,10 @@
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="labelNom" linkSize="6" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="spinnerPreu" linkSize="6" min="-2" pref="56" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="spinnerTemps" linkSize="6" min="-2" pref="58" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                              <Component id="spinnerPreu" min="-2" pref="68" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="spinnerTemps" min="-2" pref="73" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="checkUrgent" min="-2" max="-2" attributes="0"/>
                               <EmptySpace pref="62" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -234,7 +234,7 @@
                     </Component>
                     <Component class="javax.swing.JButton" name="buttonAfegir">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Afegir Client"/>
+                        <Property name="text" type="java.lang.String" value="Afegir Article"/>
                         <Property name="enabled" type="boolean" value="false"/>
                       </Properties>
                       <Events>

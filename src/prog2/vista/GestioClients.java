@@ -391,7 +391,7 @@ public class GestioClients extends javax.swing.JDialog {
         jtextFieldCorreu.setText("");
         jTextFieldNom.setText("");
         jCheckBoxPremium.setSelected(false);
-        buttonAfegir.setEnabled(false);
+        jButtonAfegir.setEnabled(false);
     }
     
     private void actualitzarLlistaClients() {
