@@ -325,19 +325,17 @@ public class GestioArticles extends javax.swing.JDialog {
     }//GEN-LAST:event_labelNomKeyReleased
 
     /**
-     * Comprova els quatre camps d'afegir article:
+     * Comprova els dos camps de text d'afegir article:
      * <ul>
      *  <li>Id de l'article</li>
      *  <li>Nom de l'article</li>
-     *  <li>Temps fins l'enviament</li>
-     *  <li>Preu unitari</li>
      * </ul>
      * 
-     * En cas que algun dels dos camps de text estigui buit, o el preu o el temps siguin 0 desactiva el botó que permet crear un nou article
-     * Si els quatre camps de text estan plens, activa el botó permetent que es creÏ el nou article
+     * En cas que algun dels dos camps de text estigui buit desactiva el botó que permet crear un nou article
+     * Si ambdós camps de text estan plens, activa el botó permetent que es creÏ el nou article
      */
     private void comprovaLabelsBuits() {
-        if(labelId.getText().equals("") || labelNom.getText().equals("") || spinnerPreu.getValue().equals(0) || spinnerTemps.getValue().equals(0))
+        if(labelId.getText().equals("") || labelNom.getText().equals(""))
             buttonAfegir.setEnabled(false);
         else 
             buttonAfegir.setEnabled(true);
@@ -363,6 +361,7 @@ public class GestioArticles extends javax.swing.JDialog {
         labelId.setText("");
         labelNom.setText("");
         checkUrgent.setSelected(false);
+        buttonAfegir.setEnabled(false);
     }
     
     private void actualitzarLlistaArticles() {
